@@ -10,7 +10,7 @@ class ColumbiaStudentResource:
 
     @staticmethod
     def _get_connection():
-
+        # environment variable
         usr = os.environ.get("DBUSER")
         pw = os.environ.get("DBPW")
         h = os.environ.get("DBHOST")
@@ -27,7 +27,7 @@ class ColumbiaStudentResource:
     @staticmethod
     def get_by_key(key):
 
-        sql = "SELECT * FROM f22_databases.columbia_students where guid=%s";
+        sql = "SELECT * FROM f22_databases.columbia_students where uni=%s";
         conn = ColumbiaStudentResource._get_connection()
         cur = conn.cursor()
         res = cur.execute(sql, args=key)

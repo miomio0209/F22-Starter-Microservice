@@ -30,7 +30,6 @@ def get_health():
 
 @app.route("/api/students/<uni>", methods=["GET"])
 def get_student_by_uni(uni):
-
     result = ColumbiaStudentResource.get_by_key(uni)
 
     if result:
@@ -40,6 +39,6 @@ def get_student_by_uni(uni):
 
     return rsp
 
+# main
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5011)
-
